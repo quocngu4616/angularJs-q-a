@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- FONT AWSOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <!-- CAROUSEL -->
+    <link rel="stylesheet" href="./css/owl.carousel.min.css">
+    <!-- fontgg -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <!-- SWEET -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="./js/angular.min.js"></script>
+    <script src="./js/nguoidung.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="myController">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light nav_config">
+        <a class="navbar-brand navbar-brand--logo" href="#">
+            <h1 class="mb-0">
+                <i class="fa fa-book"></i>
+                교수
+            </h1>
+            <p class="">EDUCATION</p>
+        </a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="myMenu">
+            <ul class="navbar-nav navbar-nav--menu ml-auto">
+                <li class="nav-item active">
+                    <a href="#" class="nav-link">TRANG CHỦ</a>
+                    <div class="nav-item--line"></div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">GIỚI THIỆU</a>
+                    <div class="nav-item--line"></div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">KÌ THI</a>
+                    <div class="nav-item--line"></div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">TÀI LIỆU</a>
+                    <div class="nav-item--line"></div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">TIN TỨC</a>
+                    <div class="nav-item--line"></div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">LIÊN HỆ</a>
+                    <div class="nav-item--line"></div>
+                </li>
+            </ul>
+            <!-- <div class="d-inline mr-4 show_id">
+                <div class="img_id d-inline">
+                    <img src="./img/avatar.png">
+                </div>
+                <div class="d-inline icon_logout">
+                    <i class="fa fa-sign-out-alt"></i>
+                    <span>Đăng Xuất</span>
+                </div>
+                <span class="ml-2">Quốc Ngữ</span>
+            </div> -->
+        </div>
+    </nav>
+
+    <!-- content -->
+    <section class="container container__config mt-5">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="content-signin">
+                    <h3>NỀN TẢNG GIÁO DỤC TRỰC TUYẾN LỚN NHẤT ĐÔNG NAM Á</h3>
+                    <p>Đăng nhập nhanh với</p>
+                    <button class="btn btn--btn_blue"><span>f</span>Facebook</button>
+                    <button class="btn btn--btn_red-1"><span>G</span>Gmail</button>
+                    <p>Hoặc đăng nhập ngay</p>
+                    <form name="frm" action="index.html" class="content-signin__form">
+                        <div class="form-group">
+                            <input type="text" id="taikhoan" required ng-model="account" name="txtAccount"
+                                class="form-control" placeholder="Tài Khoản">
+
+                        </div>
+                        <div class="mt-3 mb-3" style="color: red;" ng-show="frm.txtAccount.$invalid">vui lòng nhập tài
+                            khoản</div>
+                        <div class="form-group">
+                            <input type="password" id="matkhau" required ng-model="pass" name="txtPassword"
+                                class="form-control" placeholder="Mật Khẩu">
+                        </div>
+                        <div class="mt-3 mb-3" style="color: red;" ng-show="frm.txtPassword.$invalid">vui lòng nhập mật
+                            khẩu</div>
+                        <button class="btn btn--red" ng-click=login()>Đăng Nhập</button>
+
+                    </form>
+                </div>
+            </div>
+            <!-- style="background-image: url(./img/im-digital.png);" -->
+            <div class="col-md-7">
+                <div class="content_img">
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myController", function ($scope) {
+
+            $scope.nguoidungs = nguoidung;
+            $scope.login = function () {
+
+                var taikhoan = frm.txtAccount.value;
+                var matkhau = frm.txtPassword.value;
+                var itemArr = [];
+                for (var i = 0; i < $scope.nguoidungs.length; i++) {
+                    if (taikhoan === $scope.nguoidungs[i].taikhoan && matkhau === $scope.nguoidungs[i].matkhau) {
+                        // $scope.nguoidungs[i].taikhoan = taikhoan;
+                        // $scope.nguoidungs[i].matkhau = matkhau;
+                        itemArr.push($scope.nguoidungs[i]);
+                        localStorage.setItem("nguoidungObj", JSON.stringify(itemArr));
+
+                    }
+                    // else {
+                    //     alert("lỗi đăng nhập");
+                    //     localStorage.setItem("nguoidungObj","");
+                    // }
+                }
+                Swal.fire({
+                    title: 'success!',
+                    text: 'ĐĂNG NHẬP THÀNH CÔNG',
+                    icon: 'success',
+                    // confirmButtonText: 'Cool'
+                });
+                setTimeout( function(){
+                    frm.submit();
+                },2000);
+               
+                //     if (taikhoan === $scope.nguoidung.taikhoan && matkhau === $scope.nguoidung.matkhau) {
+                //         $scope.nguoidung.taikhoan = taikhoan;
+                //         $scope.nguoidung.matkhau = matkhau;
+                //         localStorage.setItem("nguoidungObj", JSON.stringify($scope.nguoidung));
+                //         frm.submit();
+                //     } else {
+                //         // alert("Người dùng không tồn tại");
+
+                //     }
+            }
+
+        });
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>

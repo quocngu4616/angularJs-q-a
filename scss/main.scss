@@ -1,0 +1,24 @@
+@import "./Helper/variable";
+@import "./Helper/mixin";
+@import "./Base/Reset";
+
+
+@import "./Helper/extend";
+@import "./Helper/function";
+
+@import './Component/Button';
+
+@import "./Layout/Footer";
+@import "./Layout/Header";
+@import "./Layout/Navbar";
+@import "./Layout/Carousel";
+@import "./Layout/Navtab";
+@import './Layout/Footer';
+
+@import "./Pages/Home";
+@import "./Pages/Admin";
+@import "./Pages/Info";
+// @import "./Pages/Result";
+@import "./Pages/ShowResult";
+@import "./Pages/Test";
+@import './Pages/login/login.scss'

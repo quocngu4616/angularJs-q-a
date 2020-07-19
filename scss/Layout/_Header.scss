@@ -1,0 +1,29 @@
+.header_config {
+  // z-index: 99;
+  //   padding: 0px 5px;
+  background-color: blue;
+  color: white;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  .header-left {
+      padding-top: 10px;
+    i {
+      margin-right: 4px;
+      
+    }
+    span {
+      margin-right: 10px;
+    }
+  }
+  .header-right {
+      i{
+        //   margin-right: 10px;
+          padding:8px 10px;
+        //   font-size: 22px;
+          border: 1px solid white;
+          cursor: pointer;
+      }
+  }
+}

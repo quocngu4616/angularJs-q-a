@@ -1,0 +1,39 @@
+#carouselSlider {
+    .carousel-indicators--config {
+      bottom: 25%;
+    }
+    .carousel-inner {
+      .carousel-item {
+        img {
+          width: 100%;
+          height: 550px;
+        }
+        .carousel-caption--config {
+          bottom: 30%;
+          font-size: 25px;
+          h2 {
+            font-weight: bolder;
+          }
+          p {
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+          }
+          .btn--readmore {
+            font-weight: bolder;
+            width: 150px;
+            color: white;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -ms-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            &:hover {
+              background-color: blue;
+            }
+          }
+        }
+      }
+    }
+  }

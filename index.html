@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- FONT AWSOME -->
+    <!-- <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js"
+        integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a"
+        crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <!-- CAROUSEL -->
+    <link rel="stylesheet" href="./css/owl.carousel.min.css">
+    <!-- fontgg -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <!-- SWEET -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <!-- angular JS   -->
+    <script src="./js/angular.min.js"></script>
+    <script src="./js/danhmuc.js"></script>
+    <script src="./js/Subjects.js"></script>
+
+
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+    <!-- header -->
+    <header class="header_config">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6 header-left">
+                    <i class="fa fa-phone"></i>
+                    <span class="">0703764616</span>
+                    <i class="fa fa-envelope"></i>
+                    <span>quocngu@gmail.com</span>
+                </div>
+                <div class="col-6 text-right header-right">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light nav_config">
+        <a class="navbar-brand navbar-brand--logo" href="#">
+            <h1 class="mb-0">
+                <i class="fa fa-book"></i>
+                교수
+            </h1>
+            <p class="">EDUCATION</p>
+        </a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="myMenu">
+            <ul class="navbar-nav navbar-nav--menu ml-auto">
+                <li class="nav-item active">
+                    <a href="#" class="nav-link">TRANG CHỦ</a>
+                    <div class="nav-item--line"></div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">GIỚI THIỆU</a>
+                    <div class="nav-item--line"></div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">KÌ THI</a>
+                    <div class="nav-item--line"></div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">TÀI LIỆU</a>
+                    <div class="nav-item--line"></div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">TIN TỨC</a>
+                    <div class="nav-item--line"></div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">LIÊN HỆ</a>
+                    <div class="nav-item--line"></div>
+                </li>
+            </ul>
+            <div class="d-inline mr-4 show_id" ng-show='show'>
+                <div class="img_id d-inline">
+                    <img src="./img/avatar.png">
+                </div>
+                <div class="d-inline icon_logout" ng-click=logout()>
+                    <i class="fa fa-sign-out-alt"></i>
+                    <span>Đăng Xuất</span>
+                </div>
+                <span class="">{{user[0].taikhoan}}</span>
+            </div>
+        </div>
+    </nav>
+    <!-- CAROUSEL -->
+    <div id="carouselSlider" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators carousel-indicators--config">
+            <li data-target="#carouselSlider" data-slide-to="0" class="active li--config"></li>
+            <li data-target="#carouselSlider" data-slide-to="1" class="li--config"></li>
+            <li data-target="#carouselSlider" data-slide-to="2" class="li--config"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <img src="./img/slide1.jpg" alt="" class="img-fluid">
+                <div class="carousel-caption carousel-caption--config">
+                    <h2>NỀN TẢNG GIÁO DỤC TRỰC TUYẾN LỚN NHẤT ĐÔNG NAM Á</h2>
+                    <h5>ĐỒNG HÀNH CÙNG BẠN</h5>
+                    <p>좋은 교육을받은 성공적인 커리어 스타. 우리와 함께 주제에 대한 더 깊은 지식을 얻게됩니다.</p>
+                    <a href="./login.html" class="btn btn-outline-light btn--readmore py-1 px-3 py-sm-2 px-sm-3">ĐĂNG
+                        NHẬP</a>
+                    <a class="btn btn-outline-light btn--readmore py-1 px-3 py-sm-2 px-sm-3">ĐĂNG KÍ</a>
+                </div>
+
+            </div>
+            <div class="carousel-item">
+                <img src="./img/slider-4.jpg" alt="" class="img-fluid">
+                <div class="carousel-caption carousel-caption--config">
+                    <h2>NỀN TẢNG GIÁO DỤC TRỰC TUYẾN LỚN NHẤT ĐÔNG NAM Á</h2>
+                    <h5>ĐỒNG HÀNH CÙNG BẠN</h5>
+                    <p>좋은 교육을받은 성공적인 커리어 스타. 우리와 함께 주제에 대한 더 깊은 지식을 얻게됩니다.</p>
+                    <a href="./login.html" class="btn btn-outline-light btn--readmore py-1 px-3 py-sm-2 px-sm-3">ĐĂNG
+                        NHẬP</a>
+                    <a class="btn btn-outline-light btn--readmore py-1 px-3 py-sm-2 px-sm-3">ĐĂNG KÍ</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./img/slide3.jpg" alt="" class="img-fluid">
+                <div class="carousel-caption carousel-caption--config">
+                    <h2>NỀN TẢNG GIÁO DỤC TRỰC TUYẾN LỚN NHẤT ĐÔNG NAM Á</h2>
+                    <h5>ĐỒNG HÀNH CÙNG BẠN</h5>
+                    <p>좋은 교육을받은 성공적인 커리어 스타. 우리와 함께 주제에 대한 더 깊은 지식을 얻게됩니다.</p>
+                    <a href="./login.html" class="btn btn-outline-light btn--readmore py-1 px-3 py-sm-2 px-sm-3">ĐĂNG
+                        NHẬP</a>
+                    <a class="btn btn-outline-light btn--readmore py-1 px-3 py-sm-2 px-sm-3">ĐĂNG KÍ</a>
+                </div>
+            </div>
+
+        </div>
+        <a class="carousel-control-prev" href="#carouselSlider" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselSlider" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!-- nav tab -->
+    <section class="tab_config">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 tab_config_title">
+
+                    <ul class="nav nav-pils ul_config">
+                        <!-- <li class="nav-item">
+                            <a class="nav-link active show" data-toggle="pill" href="#THPT">THPT</a>
+                        </li> -->
+                        <li class="nav-item"><a class="nav-link active show" data-toggle="pill"
+                                href="#JS">JAVASCRIPT</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link " data-toggle="pill" href="#ANG">ANGULAR JS</a>
+                        </li>
+
+                        <li class="viewall ml-3 mt-4"><a href="">View All -><span
+                                    class="lnr lnr-arrow-right"></span></a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+
+                        <div class="tab-pane container active show text-center" id="JS">
+                            <div class="product__items d-flex justify-content-between">
+                                <div class="product__item" ng-repeat="s in monhoc|filter:'JS':true|limitTo:4:begin">
+                                    <a>
+                                        <div class="item__img"><img class="" src="./img/{{s.Logo}}" alt="item">
+                                            <div class="img__overlay"></div>
+                                        </div>
+                                        <div class="item__info">
+                                            <h6 class="">{{s.Name}}</h6>
+                                            <div class="rating"><i class="fas fa-star" aria-hidden="true"></i><i
+                                                    class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star"
+                                                    aria-hidden="true"></i><i class="fas fa-star-half-alt"
+                                                    aria-hidden="true"></i><i class="far fa-star"
+                                                    aria-hidden="true"></i><span class="score">3.5 <span
+                                                        class="reviews">(176,466)</span></span></div>
+                                            <div class="price">
+                                                <span class="old__price">{{s.price}} <i class="fas fa-tag"
+                                                        aria-hidden="true"></i></span>
+                                            </div>
+                                        </div>
+
+                                    </a>
+                                    <div class="sub__info">
+
+                                    </div>
+                                    <div class="movie_detail w-100 text-center text-white">
+                                        <i class="fa fa-play d-block mx-auto mb-3"></i>
+                                        <a href="./viewTest/test{{s.Id}}.html" class="d-block text-white mt-3">LEARN
+                                            NOW</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary px-4" ng-click='first()'><i
+                                    class="fa fa-fast-backward"></i></button>
+                            <button class="btn btn-primary px-4" ng-click='left()'><i
+                                    class="fa fa-chevron-left"></i></button>
+                            <button class="btn btn-primary px-4" ng-click='right()'><i
+                                    class="fa fa-chevron-right"></i></button>
+                            <button class="btn btn-primary px-4" ng-click='last()'><i
+                                    class="fa fa-fast-forward"></i></i></button>
+                        </div>
+                        <div class="tab-pane container fade text-center" id="ANG">
+                            <div class="product__items p-2 d-flex justify-content-between">
+                                <div class="product__item" ng-repeat="s in monhoc|filter:'ANG':true|limitTo:4:begin">
+                                    <a href="">
+                                        <div class="item__img"><img src="./img/{{s.Logo}}" alt="item">
+                                            <div class="img__overlay"></div>
+                                        </div>
+                                        <div class="item__info">
+                                            <h6>{{s.Name}}</h6>
+                                            <div class="rating"><i class="fas fa-star" aria-hidden="true"></i><i
+                                                    class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star"
+                                                    aria-hidden="true"></i><i class="fas fa-star-half-alt"
+                                                    aria-hidden="true"></i><i class="far fa-star"
+                                                    aria-hidden="true"></i><span class="score">3.5 <span
+                                                        class="reviews">(176,466)</span></span></div>
+                                            <div class="price">
+                                                <span class="old__price">{{s.price}} <i class="fas fa-tag"
+                                                        aria-hidden="true"></i></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="sub__info">
+
+                                    </div>
+                                    <div class="movie_detail w-100 text-center text-white">
+                                        <i class="fa fa-play d-block mx-auto mb-3"></i>
+                                        <a href="./viewTest/test{{s.Id}}.html" class="d-block text-white mt-3">LEARN
+                                            NOW</a>
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline-light"><i class="icomoon icon-first"></i> ádsf</button>
+                            </div>
+                            <button class="btn btn-primary px-4" ng-click='first()'><i
+                                    class="fa fa-fast-backward"></i></button>
+                            <button class="btn btn-primary px-4" ng-click='left()'><i
+                                    class="fa fa-chevron-left"></i></button>
+                            <button class="btn btn-primary px-4" ng-click='right()'><i
+                                    class="fa fa-chevron-right"></i></button>
+                            <button class="btn btn-primary px-4" ng-click='last()'><i
+                                    class="fa fa-fast-forward"></i></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footter -->
+    <footer class="mt-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6>Get in touch</h6>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Give us feedback</a></li>
+                        <li><a href="#">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h6>About Course</h6>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Find us</a></li>
+                        <li><a href="#">Schedule</a></li>
+                        <li><a href="#">News</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h6>Legal stuff</h6>
+                    <ul>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                        <li><a href="#">Cookie policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h6>Connect with us</h6>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i> Google +</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>2017 © Movie Star / <a href="https://www.klevermedia.co.uk">Web design by Klever media</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller("myCtrl", function ($scope) {
+            $scope.danhmuc = danhmuc;
+            $scope.monhoc = monhoc;
+            $scope.getDM = function (madanhmuc) {
+                $scope.objReturn = [];
+                for (var i = 0; i < $scope.monhoc; i++) {
+                    if ($scope.monhoc[i].maDM === madanhmuc) {
+                        return $scope.objReturn = $scope.monhoc[i];
+                    } else {
+                        return $scope.objReturn;
+                    }
+                }
+            };
+            //pagination
+            $scope.begin = 0;
+            $scope.pageCount = Math.ceil($scope.monhoc.length / 4);
+            $scope.first = function () {
+                $scope.begin = 0;
+            };
+            $scope.left = function () {
+                if ($scope.begin > 0) {
+                    $scope.begin -= 4;
+                }
+            };
+            $scope.right = function () {
+                if ($scope.begin < ($scope.pageCount - 1) * 4) {
+                    $scope.begin += 4;
+                }
+            };
+            $scope.last = function () {
+                $scope.begin = ($scope.pageCount - 1) * 4;
+            }
+            // lấy dữ liệu từ localstorage
+            $scope.show;
+            var nguoidungObj;
+
+            if (localStorage.getItem('nguoidungObj')) {
+                nguoidungObj = JSON.parse(localStorage.getItem('nguoidungObj'));
+                $scope.show = true;
+            } else {
+                nguoidungObj = [];
+                $scope.show = false;
+            }
+            $scope.user = nguoidungObj;
+            //đăng suất
+            $scope.logout = function () {
+                $scope.user = localStorage.setItem('nguoidungObj', []);
+                $scope.show = false;
+                Swal.fire({
+                    title: 'success!',
+                    text: 'ĐĂNG SUẤT THÀNH CÔNG',
+                    icon: 'success',
+                    // confirmButtonText: 'Cool'
+                });
+            }
+
+
+        })
+    </script>
+
+
+    <script src="./js/owl.carousel.min.js"></script>
+    <!-- CAROUSEL -->
+    <script src="./js/owl.carousel.min.js"></script>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 30,
+            nav: false,
+            responsiveClass: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1,
+
+                },
+                600: {
+                    items: 3,
+
+                },
+                1000: {
+                    items: 3,
+                    loop: true
+                }
+            }
+        })
+    </script>
+
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
